@@ -25,7 +25,7 @@ SECRET_KEY = 'q!rq)dwm^xc1-q5roa#*lcygg%8vgpmg%ao6rr*f=$n*t8b5t)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['165.22.251.127']
+# ALLOWED_HOSTS = ['165.22.251.127']
 
 
 # Application definition
@@ -79,9 +79,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'webproject',
-        'USER': 'root',
-        'PASSWORD': 'password',
-        'HOST': '209.97.171.159',
+        'USER': 'admin',
+        'PASSWORD': '12345678',
+        'HOST': 'project-database.ctrko0fjw3ui.us-east-1.rds.amazonaws.com',
         'PORT': '3306'
     }
 }
