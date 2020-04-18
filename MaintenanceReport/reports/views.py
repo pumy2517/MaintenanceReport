@@ -61,7 +61,7 @@ def index(request):
     print(data)
     context['formset'] = formset
 
-    return render(request, template_name='reports/index.html', context= context)
+    return render_to_response(request, template_name='reports/index.html', context= context)
 
 def my_login(request):
     context = {'title': "เข้าสู่ระบบ",}
@@ -86,7 +86,7 @@ def my_login(request):
     next_url = request.GET.get('next')
     if next_url:
         context['next_url'] = next_url
-    return render(request, 'reports/login.html', context)
+    return render_to_response(request, 'reports/login.html', context)
 
 @login_required
 def my_register(request):
@@ -127,7 +127,7 @@ def my_register(request):
         form = RegisterModelForm()
     context['title'] = 'สมัตรสมาชิค'
     context['form'] = form
-    return render(request,'reports/register.html', context=context)
+    return render_to_response(request,'reports/register.html', context=context)
 
 @login_required
 def report_form(request):
@@ -146,7 +146,7 @@ def report_form(request):
     print(request.user.id)
     form = ReportModelForm()
     context = {'title': "แจ้งซ่อมปุกรณ์",'form': form}
-    return render(request,'reports/reportform.html', context=context)
+    return render_to_response(request,'reports/reportform.html', context=context)
 
 @login_required
 @group_required('engineer')
@@ -175,7 +175,7 @@ def detail(request, maintenance_id):
         formset = ReportFormSet(initial=data)
     context['maintenance'] = data
     context['formset'] = formset
-    return render(request, 'reports/detail.html', context=context)
+    return render_to_response(request, 'reports/detail.html', context=context)
 
 @login_required
 def my_logout(request):
@@ -232,7 +232,7 @@ def stock_list(request, category_id, machine_id):
         'text': searchpart
     }
 
-    return render(request, template_name='reports/stock/stockpick.html', context=context)
+    return render_to_response(request, template_name='reports/stock/stockpick.html', context=context)
 
 @login_required
 @group_required('engineer')
@@ -301,7 +301,7 @@ def cart(request, category_id, machine_id):
         'category_id': category_id,
         'machine_id': machine_id
     }
-    return render(request, template_name='reports/stock/cart.html', context=context)
+    return render_to_response(request, template_name='reports/stock/cart.html', context=context)
 
 @login_required
 @group_required('engineer')
@@ -386,7 +386,7 @@ def selectcategory(request, machine_id):
         'text': searchcat
     }
     print("name %s" %title)
-    return render(request, template_name='reports/stock/selectcategory.html', context=context)
+    return render_to_response(request, template_name='reports/stock/selectcategory.html', context=context)
 
 @login_required
 @group_required('engineer')
@@ -402,7 +402,7 @@ def selectmachine(request):
         'title': "รายการเครื่องจักรทอผ้า",
         'machine_list': machine
     }
-    return render(request, template_name='reports/stock/selectmachine.html', context=context)
+    return render_to_response(request, template_name='reports/stock/selectmachine.html', context=context)
 
 @login_required
 @group_required('engineer', 'supervisors')
@@ -448,7 +448,7 @@ def graph(request):
         'datatest':data,
         'datamaintenance': machinedataset,
         'form': form}
-    return render(request, template_name='reports/graph.html', context=context)
+    return render_to_response(request, template_name='reports/graph.html', context=context)
 
 # @login_required
 # def working(request):
