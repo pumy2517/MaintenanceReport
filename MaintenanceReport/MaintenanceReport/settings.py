@@ -25,7 +25,7 @@ SECRET_KEY = 'q!rq)dwm^xc1-q5roa#*lcygg%8vgpmg%ao6rr*f=$n*t8b5t)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.92.80.175']
+ALLOWED_HOSTS = ['52.77.202.115']
 
 
 # Application definition
@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'webproject',
         'USER': 'admin',
         'PASSWORD': '12345678',
-        'HOST': 'project-database.ctrko0fjw3ui.us-east-1.rds.amazonaws.com',
+        'HOST': 'database60070067.c2bddgs5itsl.ap-southeast-1.rds.amazonaws.com',
         'PORT': '3306'
     }
 }
