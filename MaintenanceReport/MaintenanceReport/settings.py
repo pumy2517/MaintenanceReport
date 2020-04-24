@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'reports',
-    'graphos'
+    'graphos',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -71,6 +72,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'MaintenanceReport.wsgi.application'
 
+
+#Storage (S3)
+AWS_ACCESS_KEY_ID = 'AKIASAPATHRYQKKFEEHI'
+AWS_SECRET_ACCESS_KEY = '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 '
+AWS_STORAGE_BUCKET_NAME = 'maintanace-report-bucket'
+AWS_S3_FILE_OVERWRITE = True
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
