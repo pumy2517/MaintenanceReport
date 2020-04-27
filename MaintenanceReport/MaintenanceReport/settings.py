@@ -78,7 +78,8 @@ AWS_ACCESS_KEY_ID = 'AKIASAPATHRYX2JZY57D'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'maintanace-report-bucket'
 AWS_S3_FILE_OVERWRITE = True
-AWS_DEFAULT_ACL = None
+AWS_S3_ENCRYPTION = True
+AWS_DEFAULT_ACL = 'public-read'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
